@@ -22,5 +22,5 @@ void test_validate_my_username()
     const char *comparend;
     username_var = my_username();
     comparend = malloc_username_from_conf_file();
-    TEST_ASSERT_EQUAL_STRING_MESSAGE(username_var, comparend, "Message from Unity Test");
+    TEST_ASSERT_EQUAL_STRING_MESSAGE(username_var, comparend, "Message");
 }
