@@ -15,12 +15,13 @@ if [ -z "$writestr" ]; then
 fi
 
 # Check if writefile already exists
-if [ -f "$writefile" ]; then
+if [ -e "$writefile" ]; then
     # If writefile already exists, remove it and write writestr to the file
     rm "$writefile"
     echo "$writestr" > "$writefile"
 else
-    # If writefile does not exist, create it and write writestr to the file
+    # If writefile does not exist, create the path to writefile and write writestr to the file
+    mkdir -p $(dirname "$writefile")
     echo "$writestr" > "$writefile"
 fi
 
